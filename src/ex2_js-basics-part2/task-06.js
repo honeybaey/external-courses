@@ -1,4 +1,4 @@
-const isSimple = (x) => {
+const isSimpleNum = (x) => {
   if (x < 2 || x > 1000) {
     return "Данные неверны";
   } else if (x === 2) {
@@ -13,4 +13,4 @@ const isSimple = (x) => {
   return `Число ${x} - простое число`;
 };
 
-module.exports = isSimple;
+module.exports = isSimpleNum;
