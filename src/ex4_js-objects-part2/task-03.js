@@ -1,5 +1,5 @@
 const deleteSpaces = (str) => {
-  return str.trim();
+  return str.slice(1, str.length - 1);
 };
 
 module.exports = deleteSpaces;

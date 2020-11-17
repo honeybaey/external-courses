@@ -1,4 +1,4 @@
-const toUpEveryFirstChar = (str) => {
+const capitalizeEachFirstChar = (str) => {
   let arr = str.split(" ");
   return arr
     .map((elem) => {
@@ -7,4 +7,4 @@ const toUpEveryFirstChar = (str) => {
     .join(" ");
 };
 
-module.exports = toUpEveryFirstChar;
+module.exports = capitalizeEachFirstChar;
