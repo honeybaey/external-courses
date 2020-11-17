@@ -1,4 +1,4 @@
-const cloneEvery = (array, callback) => {
+const customEvery = (array, callback) => {
   for (let i = 0; i < array.length; i++) {
     if (!callback(array[i], i, array)) {
       return false;
@@ -7,4 +7,4 @@ const cloneEvery = (array, callback) => {
   return true;
 };
 
-module.exports = cloneEvery;
+module.exports = customEvery;

@@ -1,4 +1,4 @@
-const cloneFilter = (array, callback) => {
+const customFilter = (array, callback) => {
   const newArr = [];
   for (let i = 0; i < array.length; i++) {
     if (callback(array[i], i, array)) {
@@ -8,4 +8,4 @@ const cloneFilter = (array, callback) => {
   return newArr;
 };
 
-module.exports = cloneFilter;
+module.exports = customFilter;

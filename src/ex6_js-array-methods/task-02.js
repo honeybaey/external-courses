@@ -1,4 +1,4 @@
-const cloneSome = (array, callback) => {
+const customSome = (array, callback) => {
   for (let i = 0; i < array.length; i++) {
     if (callback(array[i], i, array)) {
       return true;
@@ -7,4 +7,4 @@ const cloneSome = (array, callback) => {
   return false;
 };
 
-module.exports = cloneSome;
+module.exports = customSome;

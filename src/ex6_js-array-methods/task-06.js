@@ -1,4 +1,4 @@
-const cloneReduce = (array, callback, initialValue) => {
+const customReduce = (array, callback, initialValue) => {
   let previousValue = initialValue || array[0];
   let i = initialValue ? 0 : 1;
 
@@ -9,4 +9,4 @@ const cloneReduce = (array, callback, initialValue) => {
   return previousValue;
 };
 
-module.exports = cloneReduce;
+module.exports = customReduce;
