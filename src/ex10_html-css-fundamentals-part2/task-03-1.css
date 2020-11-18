@@ -1,0 +1,19 @@
+tr:nth-child(odd) {
+  background: #e3eaf3;
+}
+
+tr:nth-child(even) {
+  background: #f2f6fa;
+}
+
+tr:hover {
+  background: #e2e5e9;
+}
+
+td {
+  padding: 10px;
+}
+
+td:nth-child(1) {
+  text-transform: capitalize;
+}
