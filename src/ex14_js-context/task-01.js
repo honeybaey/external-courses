@@ -66,3 +66,5 @@ const showResponse = (json) => {
 let Calculator = new Calc();
 
 Calculator.fetchData(showResponse);
+
+module.exports = new Calc();
