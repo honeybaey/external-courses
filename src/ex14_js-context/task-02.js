@@ -1,31 +1,37 @@
 function Hangman(word) {
+  if (typeof word === "undefined" || word.length === 0) {
+    console.log("Invalid word");
+    return (this.state = []);
+  }
   this.word = word;
   this.state = word.replace(/./g, "_").split("");
   this.errors = 6;
   this.wrong = [];
 
   this.guess = function (letter) {
-    const caseIndependentLetter = letter.toLowerCase();
+    if (this.state != []) {
+      const caseIndependentLetter = letter.toLowerCase();
 
-    if (this.word.indexOf(caseIndependentLetter) >= 0) {
-      this.state = this.state.map((_, i) =>
-        this.word[i] == caseIndependentLetter ? caseIndependentLetter : _
-      );
+      if (this.word.indexOf(caseIndependentLetter) >= 0) {
+        this.state = this.state.map((dash, i) =>
+          this.word[i] == caseIndependentLetter ? caseIndependentLetter : dash
+        );
 
-      this.state.join("") == this.word
-        ? console.log(`${this.state.join("")} | You won!`)
-        : console.log(this.state.join(""));
-    } else {
-      this.errors--;
-      this.wrong.push(caseIndependentLetter);
+        this.state.join("") == this.word
+          ? console.log(`${this.state.join("")} | You won!`)
+          : console.log(this.state.join(""));
+      } else {
+        this.errors--;
+        this.wrong.push(caseIndependentLetter);
 
-      this.errors > 0
-        ? console.log(
-            `wrong letter, errors left ${this.errors} | ${this.wrong}`
-          )
-        : console.log("You lose!");
+        this.errors > 0
+          ? console.log(
+              `wrong letter, errors left ${this.errors} | ${this.wrong}`
+            )
+          : console.log("You lose!");
+      }
+      return this;
     }
-    return this;
   };
 
   this.getGuessedString = function () {
