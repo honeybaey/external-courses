@@ -21,15 +21,4 @@ function sendRequest(method, url, body = null) {
   });
 }
 
-const newUser = {
-  name: "Noname",
-  age: 20,
-};
-
-sendRequest("GET", requestURL)
-  .then((data) => console.log(data))
-  .catch((error) => console.log(error));
-
-sendRequest("POST", requestURL, newUser)
-  .then((data) => console.log(data))
-  .catch((error) => console.log(error));
+module.exports = sendRequest;
