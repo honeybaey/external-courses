@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__left-side">
+        <div class="header__logo">
+          <img src="./app-logo.png" alt="logo" />
+        </div>
+        <h1 class="header__title">Awesome Kanban Board</h1>
+      </div>
+
+      <div class="header__right-side">
+        <button class="header__button">
+          <i class="header__button-icon fas fa-plus-circle"></i>
+          Create new list
+        </button>
+        <div class="user">
+          <img class="user__avatar" src="./user-avatar.png" alt="user-avatar" />
+          <i class="user__icon fas fa-angle-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="dropdown dropdown-backlog">
+        <div class="dropdown__header">
+          <h4 class="dropdown__title">Backlog</h4>
+          <i class="dropdown__header-icon fas fa-ellipsis-h"></i>
+        </div>
+        <ul class="dropdown__list dropdown__list-backlog"></ul>
+        <button class="dropdown__button-add" id="button-backlog">
+          <i class="dropdown__button-icon fas fa-plus"></i>
+          Add card
+        </button>
+      </section>
+      <section class="dropdown dropdown-ready">
+        <div class="dropdown__header">
+          <h4 class="dropdown__title">Ready</h4>
+          <i class="dropdown__header-icon fas fa-ellipsis-h"></i>
+        </div>
+        <ul class="dropdown__list dropdown__list-ready"></ul>
+        <button class="dropdown__button-add" id="button-ready">
+          <i class="dropdown__button-icon fas fa-plus"></i>
+          Add card
+        </button>
+      </section>
+      <section class="dropdown dropdown-progress">
+        <div class="dropdown__header">
+          <h4 class="dropdown__title">In Progress</h4>
+          <i class="dropdown__header-icon fas fa-ellipsis-h"></i>
+        </div>
+        <ul class="dropdown__list dropdown__list-progress"></ul>
+        <button class="dropdown__button-add" id="button-progress">
+          <i class="dropdown__button-icon fas fa-plus"></i>
+          Add card
+        </button>
+      </section>
+      <section class="dropdown dropdown-finished">
+        <div class="dropdown__header">
+          <h4 class="dropdown__title">Finished</h4>
+          <i class="dropdown__header-icon fas fa-ellipsis-h"></i>
+        </div>
+        <ul class="dropdown__list dropdown__list-finished"></ul>
+        <button class="dropdown__button-add" id="button-finished">
+          <i class="dropdown__button-icon fas fa-plus"></i>
+          Add card
+        </button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__left-side">
+        <span>Active tasks: &lt;N&gt; </span>
+        <span>Finished tasks: &lt;M&gt; </span>
+      </div>
+      <div class="footer__right-side">
+        <span>Kanban board by &lt;NAME&gt;, &lt;YEAR&gt; </span>
+      </div>
+    </footer>
+  </body>
+</html>
