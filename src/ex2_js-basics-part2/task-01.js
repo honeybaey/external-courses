@@ -1,10 +1,8 @@
 const showType = (arg) => {
-  if (typeof arg === "string") {
-    return "string";
-  } else if (typeof arg === "number") {
-    return "number";
+  if (typeof arg === "number" || typeof arg === "string") {
+    return typeof arg;
   } else {
-    return undefined;
+    return;
   }
 };
 
