@@ -27,7 +27,11 @@ const debounce = (fn, ms) => {
 };
 
 function onChange(e) {
-  console.log(countries.find((item) => e.target.value === item));
+  console.log(
+    countries.find(
+      (item) => e.target.value.toLowerCase() === item.toLowerCase()
+    )
+  );
 }
 
 onChange = debounce(onChange, 200);
