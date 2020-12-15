@@ -2,7 +2,7 @@ const calc = {
   state: 0,
 
   add: function (x = 0) {
-    this.state += x;
+    calc.state += x;
     return calc.add;
   },
   subtract: function (x = 0) {
