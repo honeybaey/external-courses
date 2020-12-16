@@ -1,7 +1,7 @@
 const addMissingProp = (str, obj) => {
   const newObj = { ...obj };
   if (!(str in obj)) {
-    return newObj[str] = "new";
+    newObj[str] = "new";
   }
   return newObj;
 };
