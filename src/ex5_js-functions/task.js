@@ -21,10 +21,8 @@ const calc = {
     return calc.state;
   },
   reset: function () {
-    return (calc.state = 0);
+    calc.state = 0;
   },
 };
-
-const Calculator = calc;
 
 module.exports = Calculator;
