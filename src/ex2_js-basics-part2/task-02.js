@@ -3,6 +3,4 @@ const showArr = (arr) => {
   console.log(`Всего: ${arr.length}`);
 };
 
-showArr(array);
-
 module.exports = showArr;
