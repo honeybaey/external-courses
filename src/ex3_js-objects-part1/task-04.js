@@ -1,9 +1,8 @@
 const addMissingProp = (str, obj) => {
-  const newObj = { ...obj };
   if (!(str in obj)) {
-    newObj[str] = "new";
+    obj[str] = "new";
   }
-  return newObj;
+  return obj;
 };
 
 module.exports = addMissingProp;
