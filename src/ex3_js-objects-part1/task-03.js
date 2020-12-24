@@ -1,8 +1,8 @@
-const checkForProp = (str, obj) => {
+const checkProp = (str, obj) => {
   for (let key in obj) {
     if (key === str) return true;
   }
   return false;
 };
 
-module.exports = checkForProp;
+module.exports = checkProp;
