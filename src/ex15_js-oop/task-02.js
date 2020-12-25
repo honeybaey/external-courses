@@ -28,16 +28,15 @@ class House {
     if (typeof name !== "string" || name.length === 0) {
       console.log("Enter a valid name");
     } else {
-      this.devices.find(
+      const foundDevice = this.devices.find(
         (device) => name.toLowerCase().trim() === device.name.toLowerCase()
-      )
-        ? console.log(
-            this.devices.find(
-              (device) =>
-                name.toLowerCase().trim() === device.name.toLowerCase()
-            )
-          )
-        : console.log("Not found");
+      );
+
+      if (foundDevice) {
+        console.log(foundDevice);
+      } else {
+        console.log("Not found");
+      }
     }
   }
 

@@ -26,15 +26,15 @@ function Gift() {
     if (typeof name !== "string" || name.length === 0) {
       console.log("Enter a valid name");
     } else {
-      candyPackage.find(
+      const foundCandy = candyPackage.find(
         (candy) => name.toLowerCase().trim() === candy.name.toLowerCase()
-      )
-        ? console.log(
-            candyPackage.find(
-              (candy) => name.toLowerCase().trim() === candy.name.toLowerCase()
-            )
-          )
-        : console.log("Not found");
+      );
+
+      if (foundCandy) {
+        console.log(foundCandy);
+      } else {
+        console.log("Not found");
+      }
     }
   };
 }
