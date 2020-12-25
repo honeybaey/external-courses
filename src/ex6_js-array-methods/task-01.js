@@ -1,10 +1,18 @@
-const customSlice = (arr, begin = 0, end = 0) => {
-  if (end === 0) return arr.filter((_, i) => i >= begin);
+const customFilter = (array, callback) => {
+  const newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i], i, array)) {
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
+};
 
-  begin = begin < 0 ? begin + arr.length : begin;
-  end = end < 0 ? end + arr.length : end;
+const customSlice = (arr, begin = 0, end = arr.length) => {
+  const from = begin < 0 ? begin + arr.length : begin;
+  const to = end < 0 ? end + arr.length : end;
 
-  return arr.filter((_, i) => i >= begin && i < end);
+  return customFilter(arr, (_, i) => i >= from && i < to);
 };
 
 module.exports = customSlice;
