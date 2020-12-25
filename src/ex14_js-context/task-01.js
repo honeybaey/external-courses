@@ -1,39 +1,23 @@
 function Calc() {
   this.state = 0;
 
-  this.add = function (x) {
-    if (arguments.length === 0) {
-      this.state;
-    } else {
-      this.state += x;
-    }
+  this.add = function (x = 0) {
+    this.state += x;
     return this;
   };
 
-  this.subtract = function (x) {
-    if (arguments.length === 0) {
-      this.state;
-    } else {
-      this.state -= x;
-    }
+  this.subtract = function (x = 0) {
+    this.state -= x;
     return this;
   };
 
-  this.divide = function (x) {
-    if (arguments.length === 0) {
-      this.state;
-    } else {
-      this.state /= x;
-    }
+  this.divide = function (x = 1) {
+    this.state /= x;
     return this;
   };
 
-  this.multiply = function (x) {
-    if (arguments.length === 0) {
-      this.state;
-    } else {
-      this.state *= x;
-    }
+  this.multiply = function (x = 1) {
+    this.state *= x;
     return this;
   };
 
@@ -67,4 +51,4 @@ let Calculator = new Calc();
 
 Calculator.fetchData(showResponse);
 
-module.exports = new Calc();
+module.exports = Calc();
