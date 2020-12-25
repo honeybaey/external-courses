@@ -1,10 +1,10 @@
 const isEqualItems = (arr) => {
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] === arr[j]) return true;
-    }
+  const result = arr.filter((el, i, arr) => arr.indexOf(el) !== i);
+  if (result.length) {
+    return true;
+  } else {
+    return false;
   }
-  return false;
 };
 
 module.exports = isEqualItems;
