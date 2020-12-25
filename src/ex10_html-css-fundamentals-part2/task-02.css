@@ -1,0 +1,28 @@
+form  {
+  display: block;
+}
+
+legend {
+  margin-bottom: 15px;
+}
+
+input,
+select {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.contact-information,
+.personal-data {
+  padding: 0 15px 10px;
+}
+
+.contact-information {
+  margin-bottom: 15px;
+}
+
+.name-inputs,
+.contact-inputs {
+  display: flex;
+  flex-direction: column;
+}

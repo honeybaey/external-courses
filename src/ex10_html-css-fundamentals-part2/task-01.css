@@ -1,0 +1,16 @@
+img {
+  width: 420px;
+  height: 420px;
+}
+
+.img-1 {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.img-2 {
+  clip-path: polygon(10% 90%, 0 15%, 100% 0, 80% 100%);
+}

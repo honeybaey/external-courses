@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="task-02.css" />
+  </head>
+  <body>
+    <form name="user_data" action="http://httpbin.org/get" method="get">
+      <fieldset class="personal-data">
+        <legend>Personal data</legend>
+        <div class="name-inputs">
+          <label>Surname<input type="text" name="surname" /></label>
+          <label>First Name<input type="text" name="firstname" /></label>
+          <label>Middle Name<input type="text" name="middlename" /></label>
+        </div>
+
+        You are
+        <label><input type="radio" name="sex" value="male" />male</label>
+        <label><input type="radio" name="sex" value="female" />female</label>
+
+        <div>
+          <label
+            >Age<input type="number" name="age" min="18" max="101" step="1"
+          /></label>
+        </div>
+
+        Country of Residence
+        <select name="country">
+          <option label=" "></option>
+          <option value="Russia">Russia</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="Spain">Spain</option>
+          <option value="England">England</option>
+        </select>
+
+        <div>
+          City
+          <label
+            ><input type="checkbox" name="city" value="Ryazan" />Ryazan</label
+          >
+          <label
+            ><input type="checkbox" name="city" value="Moscow" />Moscow</label
+          >
+        </div>
+
+        Photography
+        <input type="file" name="photography" />
+
+        <hr />
+
+        Title
+        <select name="title" size="8">
+          <optgroup label="Technologies"></optgroup>
+          <option value="Web Master">Web Master</option>
+          <option value="Database Administrator">Database Administrator</option>
+          <option value="Computer-aided design">Computer-aided design</option>
+          <optgroup label="Finance"></optgroup>
+          <option value="Economic Planning">Economic Planning</option>
+          <option value="Management accounting">Management accounting</option>
+          <option value="Budgeting and planning">Budgeting and planning</option>
+        </select>
+
+        <div>
+          Salary
+          <input
+            type="range"
+            name="salary"
+            min="0"
+            max="100"
+            step="1"
+            value="50"
+          />
+        </div>
+
+        <textarea
+          name="about_yourself"
+          cols="50"
+          rows="10"
+          placeholder="Tell us about yourself..."
+        ></textarea>
+      </fieldset>
+
+      <fieldset class="contact-information">
+        <legend>Contact information</legend>
+
+        <div class="contact-inputs">
+          <label>Site<input type="url" name="site" /></label>
+          <label>Email<input type="email" name="email" /></label>
+          <label>Phone<input type="tel" name="phone" /></label>
+        </div>
+      </fieldset>
+
+      <label>Password<input type="password" required /></label>
+      <div>
+        <input type="submit" name="submit" value="Отправить" />
+        <input type="reset" />
+      </div>
+    </form>
+  </body>
+</html>

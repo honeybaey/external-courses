@@ -1,0 +1,14 @@
+#table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 0.875rem;
+  border-collapse: separate;
+  border-spacing: 3px;
+  text-align: center;
+  color: #7992aa;
+}
+
+.head-cell {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  padding: 6px;
+}
