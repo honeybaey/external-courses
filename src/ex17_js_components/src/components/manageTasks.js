@@ -1,9 +1,12 @@
-import { dataMock, DataStorage } from "./data.js";
+import { DataStorage } from "./data.js";
+import { dataMock } from "./createNewList.js";
 import {
   backlogDropdown,
   readyDropdown,
   progressDropdown,
 } from "./createTasks.js";
+import { tasksCount } from "./tasksCount.js";
+import { disableButton } from "./disableButton.js";
 
 const readyDropdownWrap = document.querySelector(".dropdown-ready");
 const progressDropdownWrap = document.querySelector(".dropdown-progress");
@@ -54,6 +57,8 @@ const manageTasks = (e, button, dropdown, initialIndex, receivedIndex) => {
       });
     }
   });
+
+  disableButton();
 };
 
 // adding selected task from the dropdown list
@@ -76,11 +81,12 @@ function addSelectedTask(e) {
     tasksContainer.remove();
   }
 
-  DataStorage.save();
+  // DataStorage.save();
 }
 
 readyDropdownWrap.addEventListener("click", (e) => {
   manageTasks(e, readyButton, backlogDropdown, 0, 1);
+  tasksCount(0)
 });
 
 progressDropdownWrap.addEventListener("click", (e) => {
@@ -89,6 +95,7 @@ progressDropdownWrap.addEventListener("click", (e) => {
 
 finishedDropdownWrap.addEventListener("click", (e) => {
   manageTasks(e, finishedButton, progressDropdown, 2, 3);
+  tasksCount(3);
 });
 
-export { addSelectedTask };
+export { addSelectedTask, manageTasks };

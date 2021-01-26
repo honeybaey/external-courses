@@ -1,6 +1,8 @@
-import { dataMock, DataStorage, tasksIdCounter } from "./data.js";
+import { DataStorage } from "./data.js";
+import { dataMock } from "./createNewList.js";
+import { tasksCount } from "./tasksCount.js";
 
-const dropdownList = document.querySelector(".dropdown__list"); // task-lists
+const dropdownList = document.querySelector(".dropdown__list");
 
 const backlogDropdown = document.querySelector(".dropdown__list-backlog");
 const readyDropdown = document.querySelector(".dropdown__list-ready");
@@ -8,6 +10,8 @@ const progressDropdown = document.querySelector(".dropdown__list-progress");
 const finishedDropdown = document.querySelector(".dropdown__list-finished");
 
 const backlogButton = document.getElementById("button-backlog");
+
+let tasksIdCounter = 16;
 
 // task template
 const createTask = (dropdown, item) => {
@@ -20,13 +24,13 @@ const createTask = (dropdown, item) => {
 };
 
 // creating a new task
-backlogButton.addEventListener("click", (e) => {
+const newTaskHandler = (list) => {
   const newTask = document.createElement("li");
   newTask.classList.add("dropdown__item");
   newTask.setAttribute("contenteditable", "true");
   newTask.setAttribute("data-task-id", tasksIdCounter);
 
-  dropdownList.append(newTask);
+  list.append(newTask);
   newTask.focus();
 
   newTask.onblur = function (e) {
@@ -51,9 +55,21 @@ backlogButton.addEventListener("click", (e) => {
       tasksIdCounter++;
     }
 
-    DataStorage.save();
+    tasksCount(0);
+
+    // DataStorage.save();
   };
-});
+
+  tasksCount()
+};
+
+const boundFunc = newTaskHandler.bind(null, dropdownList);
+
+backlogButton.addEventListener("click", boundFunc);
+
+const removeBacklogButtonHandler = () => {
+  backlogButton.removeEventListener("click", boundFunc);
+};
 
 // creating task list
 const createTaskList = (dropdown, index) => {
@@ -71,10 +87,14 @@ const createDropdownLists = () => {
 };
 
 export {
+  dataMock,
   createTask,
   createDropdownLists,
   backlogDropdown,
   readyDropdown,
   progressDropdown,
   finishedDropdown,
+  newTaskHandler,
+  removeBacklogButtonHandler,
+  backlogButton,
 };
